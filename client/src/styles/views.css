@@ -1,0 +1,286 @@
+/* KPI Metric Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.metric:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.metric small {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.metric strong {
+  display: block;
+  margin: 6px 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Grid Containers */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Chart Bars & Insights */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 80px;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.bar-row span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--ink-secondary);
+}
+
+.track {
+  height: 8px;
+  background: var(--line-subtle);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.4s ease-out;
+}
+
+.bar.warn { background: var(--gold); }
+.bar.hot { background: var(--accent-2); }
+
+.insight {
+  border-left: 4px solid var(--blue);
+  padding: 14px 16px;
+  background: var(--blue-light);
+  margin-bottom: 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.insight strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.insight p {
+  color: var(--ink-secondary);
+  font-size: 13.5px;
+  margin-top: 4px;
+}
+
+.insight small {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Copilot Chat UI */
+.copilot-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 360px;
+}
+
+.chat-messages {
+  flex: 1;
+  max-height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background: var(--surface-hover);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+}
+
+.chat-bubble {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  max-width: 90%;
+  line-height: 1.45;
+}
+
+.chat-bubble.user {
+  background: var(--accent);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-bubble.bot {
+  background: white;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.chat-bubble strong {
+  display: block;
+  font-size: 11px;
+  opacity: 0.85;
+  margin-bottom: 2px;
+}
+
+.chat-bubble p {
+  margin: 0;
+  color: inherit;
+}
+
+.placeholder-text {
+  color: var(--muted);
+  font-size: 13px;
+  margin: auto;
+  text-align: center;
+}
+
+.typing {
+  color: var(--blue);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.sample-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-btn {
+  background: var(--surface-hover);
+  border: 1px solid var(--line);
+  color: var(--ink-secondary);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.chip-btn:hover {
+  background: #e2e8f0;
+  color: var(--ink);
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-input-row input {
+  flex: 1;
+}
+
+.chat-input-row button {
+  background: var(--accent);
+  color: white;
+  border: 0;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+}
+
+/* =========================================================
+   VIEWS RESPONSIVE MEDIA QUERIES
+========================================================= */
+
+@media (max-width: 1024px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .metric {
+    padding: 12px 14px;
+  }
+
+  .metric strong {
+    font-size: 18px;
+    margin: 4px 0;
+  }
+
+  .metric small, .metric span {
+    font-size: 11px;
+  }
+
+  .bar-row {
+    grid-template-columns: 100px 1fr 65px;
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .chat-bubble {
+    max-width: 100%;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}

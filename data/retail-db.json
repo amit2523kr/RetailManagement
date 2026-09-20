@@ -1,0 +1,575 @@
+{
+  "meta": {
+    "createdAt": "2026-09-15T10:22:26.127Z",
+    "updatedAt": "2026-09-15T10:22:26.144Z"
+  },
+  "roles": {
+    "SUPER_ADMIN": [
+      "*"
+    ],
+    "BUSINESS_OWNER": [
+      "dashboard:read",
+      "financials:read",
+      "users:manage",
+      "catalog:manage",
+      "partners:manage",
+      "orders:manage",
+      "inventory:manage",
+      "payments:manage",
+      "audit:read",
+      "copilot:read"
+    ],
+    "MANAGER": [
+      "dashboard:read",
+      "catalog:manage",
+      "partners:manage",
+      "orders:manage",
+      "inventory:read",
+      "reports:read"
+    ],
+    "SALES_STAFF": [
+      "dashboard:read",
+      "customers:read",
+      "inventory:read",
+      "sales:create",
+      "invoices:create"
+    ],
+    "INVENTORY_STAFF": [
+      "inventory:manage",
+      "purchases:receive",
+      "returns:manage",
+      "catalog:read"
+    ],
+    "ACCOUNTANT": [
+      "payments:manage",
+      "invoices:read",
+      "financials:read",
+      "reports:read"
+    ]
+  },
+  "users": [
+    {
+      "id": "usr_super",
+      "name": "Asha Rao",
+      "email": "asha@example.com",
+      "role": "SUPER_ADMIN",
+      "token": "super-token"
+    },
+    {
+      "id": "usr_owner",
+      "name": "Vikram Shah",
+      "email": "owner@example.com",
+      "role": "BUSINESS_OWNER",
+      "token": "owner-token"
+    },
+    {
+      "id": "usr_manager",
+      "name": "Mina Patel",
+      "email": "manager@example.com",
+      "role": "MANAGER",
+      "token": "manager-token"
+    },
+    {
+      "id": "usr_sales",
+      "name": "Kabir Khan",
+      "email": "sales@example.com",
+      "role": "SALES_STAFF",
+      "token": "sales-token"
+    },
+    {
+      "id": "usr_inventory",
+      "name": "Neha Singh",
+      "email": "inventory@example.com",
+      "role": "INVENTORY_STAFF",
+      "token": "inventory-token"
+    },
+    {
+      "id": "usr_accountant",
+      "name": "Rohan Mehta",
+      "email": "accountant@example.com",
+      "role": "ACCOUNTANT",
+      "token": "accountant-token"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat_bev",
+      "name": "Beverages",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "cat_snack",
+      "name": "Snacks",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "cat_dairy",
+      "name": "Dairy",
+      "status": "ACTIVE"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "sup_coke",
+      "name": "Coca-Cola Agency",
+      "contact": "Nisha",
+      "outstanding": 25500
+    },
+    {
+      "id": "sup_pepsi",
+      "name": "Pepsi Distributor",
+      "contact": "Harish",
+      "outstanding": 18100
+    },
+    {
+      "id": "sup_nestle",
+      "name": "Nestle Foods",
+      "contact": "Divya",
+      "outstanding": 9400
+    }
+  ],
+  "customers": [
+    {
+      "id": "cus_mart",
+      "name": "Bright Mart",
+      "channelId": "chn_direct",
+      "outstanding": 22400
+    },
+    {
+      "id": "cus_hotel",
+      "name": "Hotel Sunrise",
+      "channelId": "chn_b2b",
+      "outstanding": 9800
+    },
+    {
+      "id": "cus_market",
+      "name": "QuickBasket",
+      "channelId": "chn_market",
+      "outstanding": 15200
+    }
+  ],
+  "channels": [
+    {
+      "id": "chn_direct",
+      "name": "Direct Store",
+      "feePercent": 0
+    },
+    {
+      "id": "chn_b2b",
+      "name": "B2B Wholesale",
+      "feePercent": 1.5
+    },
+    {
+      "id": "chn_market",
+      "name": "Marketplace",
+      "feePercent": 8
+    }
+  ],
+  "products": [
+    {
+      "id": "prd_coke_500",
+      "sku": "COKE-500",
+      "barcode": "8901764010018",
+      "name": "Coca-Cola 500ml",
+      "description": "Coca-Cola 500ml retail pack",
+      "categoryId": "cat_bev",
+      "category": "Beverages",
+      "brand": "Coca-Cola",
+      "supplierId": "sup_coke",
+      "unit": "PCS",
+      "purchasePrice": 23,
+      "sellingPrice": 38,
+      "tax": 18,
+      "discount": 0,
+      "minimumStockLevel": 60,
+      "currentStock": 240,
+      "image": "",
+      "status": "ACTIVE",
+      "createdAt": "2026-06-17T10:22:26.127Z",
+      "updatedAt": "2026-09-13T10:22:26.127Z"
+    },
+    {
+      "id": "prd_pepsi_500",
+      "sku": "PEP-500",
+      "barcode": "8902080200208",
+      "name": "Pepsi 500ml",
+      "description": "Pepsi 500ml retail pack",
+      "categoryId": "cat_bev",
+      "category": "Beverages",
+      "brand": "Pepsi",
+      "supplierId": "sup_pepsi",
+      "unit": "PCS",
+      "purchasePrice": 22,
+      "sellingPrice": 36,
+      "tax": 18,
+      "discount": 0,
+      "minimumStockLevel": 50,
+      "currentStock": 175,
+      "image": "",
+      "status": "ACTIVE",
+      "createdAt": "2026-06-17T10:22:26.127Z",
+      "updatedAt": "2026-09-13T10:22:26.127Z"
+    },
+    {
+      "id": "prd_maggi",
+      "sku": "NES-MAG-70",
+      "barcode": "8901058841114",
+      "name": "Maggi Masala 70g",
+      "description": "Maggi Masala 70g retail pack",
+      "categoryId": "cat_snack",
+      "category": "Snacks",
+      "brand": "Nestle",
+      "supplierId": "sup_nestle",
+      "unit": "PCS",
+      "purchasePrice": 11,
+      "sellingPrice": 15,
+      "tax": 12,
+      "discount": 0,
+      "minimumStockLevel": 100,
+      "currentStock": 420,
+      "image": "",
+      "status": "ACTIVE",
+      "createdAt": "2026-06-17T10:22:26.127Z",
+      "updatedAt": "2026-09-13T10:22:26.127Z"
+    },
+    {
+      "id": "prd_milk",
+      "sku": "AMUL-MILK-1L",
+      "barcode": "8901262010023",
+      "name": "Toned Milk 1L",
+      "description": "Toned Milk 1L retail pack",
+      "categoryId": "cat_dairy",
+      "category": "Dairy",
+      "brand": "Amul",
+      "supplierId": "sup_nestle",
+      "unit": "PCS",
+      "purchasePrice": 52,
+      "sellingPrice": 62,
+      "tax": 5,
+      "discount": 0,
+      "minimumStockLevel": 40,
+      "currentStock": 28,
+      "image": "",
+      "status": "ACTIVE",
+      "createdAt": "2026-06-17T10:22:26.127Z",
+      "updatedAt": "2026-09-13T10:22:26.127Z"
+    },
+    {
+      "id": "prd_chips",
+      "sku": "LAY-CLASSIC-52",
+      "barcode": "8901491102011",
+      "name": "Classic Salted Chips",
+      "description": "Classic Salted Chips retail pack",
+      "categoryId": "cat_snack",
+      "category": "Snacks",
+      "brand": "Lays",
+      "supplierId": "sup_pepsi",
+      "unit": "PCS",
+      "purchasePrice": 16,
+      "sellingPrice": 25,
+      "tax": 12,
+      "discount": 0,
+      "minimumStockLevel": 35,
+      "currentStock": 13,
+      "image": "",
+      "status": "ACTIVE",
+      "createdAt": "2026-06-17T10:22:26.127Z",
+      "updatedAt": "2026-09-15T10:22:26.144Z"
+    }
+  ],
+  "purchaseOrders": [
+    {
+      "id": "po_1001",
+      "supplierId": "sup_coke",
+      "status": "RECEIVED",
+      "orderedAt": "2026-08-26T10:22:26.127Z",
+      "receivedAt": "2026-08-28T10:22:26.127Z",
+      "total": 46000
+    },
+    {
+      "id": "po_1002",
+      "supplierId": "sup_pepsi",
+      "status": "PARTIAL",
+      "orderedAt": "2026-09-08T10:22:26.127Z",
+      "receivedAt": null,
+      "total": 32200
+    },
+    {
+      "id": "po_1003",
+      "supplierId": "sup_nestle",
+      "status": "DRAFT",
+      "orderedAt": "2026-09-13T10:22:26.127Z",
+      "receivedAt": null,
+      "total": 12800
+    }
+  ],
+  "salesOrders": [
+    {
+      "id": "so_2001",
+      "customerId": "cus_mart",
+      "channelId": "chn_direct",
+      "status": "INVOICED",
+      "orderedAt": "2026-08-18T10:22:26.127Z",
+      "lines": [
+        {
+          "productId": "prd_coke_500",
+          "quantity": 80,
+          "unitPrice": 38,
+          "unitCost": 23,
+          "tax": 18
+        },
+        {
+          "productId": "prd_maggi",
+          "quantity": 120,
+          "unitPrice": 15,
+          "unitCost": 11,
+          "tax": 12
+        }
+      ],
+      "subtotal": 4840,
+      "tax": 763.1999999999999,
+      "total": 5603
+    },
+    {
+      "id": "so_2002",
+      "customerId": "cus_hotel",
+      "channelId": "chn_b2b",
+      "status": "INVOICED",
+      "orderedAt": "2026-09-01T10:22:26.127Z",
+      "lines": [
+        {
+          "productId": "prd_pepsi_500",
+          "quantity": 90,
+          "unitPrice": 36,
+          "unitCost": 22,
+          "tax": 18
+        },
+        {
+          "productId": "prd_milk",
+          "quantity": 30,
+          "unitPrice": 62,
+          "unitCost": 52,
+          "tax": 5
+        }
+      ],
+      "subtotal": 5100,
+      "tax": 676.1999999999999,
+      "total": 5776
+    },
+    {
+      "id": "so_2003",
+      "customerId": "cus_market",
+      "channelId": "chn_market",
+      "status": "INVOICED",
+      "orderedAt": "2026-09-10T10:22:26.127Z",
+      "lines": [
+        {
+          "productId": "prd_coke_500",
+          "quantity": 140,
+          "unitPrice": 38,
+          "unitCost": 23,
+          "tax": 18
+        },
+        {
+          "productId": "prd_chips",
+          "quantity": 60,
+          "unitPrice": 25,
+          "unitCost": 16,
+          "tax": 12
+        }
+      ],
+      "subtotal": 6820,
+      "tax": 1137.6,
+      "total": 7958
+    },
+    {
+      "id": "so_2004",
+      "customerId": "cus_mart",
+      "channelId": "chn_direct",
+      "status": "INVOICED",
+      "orderedAt": "2026-09-14T10:22:26.127Z",
+      "lines": [
+        {
+          "productId": "prd_maggi",
+          "quantity": 180,
+          "unitPrice": 15,
+          "unitCost": 11,
+          "tax": 12
+        },
+        {
+          "productId": "prd_pepsi_500",
+          "quantity": 48,
+          "unitPrice": 36,
+          "unitCost": 22,
+          "tax": 18
+        }
+      ],
+      "subtotal": 4428,
+      "tax": 635.04,
+      "total": 5063
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv_3001",
+      "salesOrderId": "so_2001",
+      "customerId": "cus_mart",
+      "status": "UNPAID",
+      "issuedAt": "2026-08-18T10:22:26.127Z",
+      "dueAt": "2026-09-25T10:22:26.127Z",
+      "total": 5603,
+      "paid": 0
+    },
+    {
+      "id": "inv_3002",
+      "salesOrderId": "so_2002",
+      "customerId": "cus_hotel",
+      "status": "PARTIAL",
+      "issuedAt": "2026-09-01T10:22:26.127Z",
+      "dueAt": "2026-09-24T10:22:26.127Z",
+      "total": 5776,
+      "paid": 2000
+    },
+    {
+      "id": "inv_3003",
+      "salesOrderId": "so_2003",
+      "customerId": "cus_market",
+      "status": "UNPAID",
+      "issuedAt": "2026-09-10T10:22:26.127Z",
+      "dueAt": "2026-09-23T10:22:26.127Z",
+      "total": 7958,
+      "paid": 0
+    },
+    {
+      "id": "inv_3004",
+      "salesOrderId": "so_2004",
+      "customerId": "cus_mart",
+      "status": "UNPAID",
+      "issuedAt": "2026-09-14T10:22:26.127Z",
+      "dueAt": "2026-09-22T10:22:26.127Z",
+      "total": 5063,
+      "paid": 0
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay_4001",
+      "type": "CUSTOMER_RECEIPT",
+      "customerId": "cus_hotel",
+      "invoiceId": "inv_3002",
+      "amount": 2000,
+      "method": "UPI",
+      "paidAt": "2026-09-11T10:22:26.127Z"
+    },
+    {
+      "id": "pay_4002",
+      "type": "SUPPLIER_PAYMENT",
+      "supplierId": "sup_coke",
+      "amount": 12000,
+      "method": "BANK",
+      "paidAt": "2026-09-12T10:22:26.127Z"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "exp_1",
+      "category": "Delivery",
+      "amount": 2800,
+      "spentAt": "2026-09-09T10:22:26.127Z",
+      "notes": "Local logistics"
+    },
+    {
+      "id": "exp_2",
+      "category": "Utilities",
+      "amount": 6100,
+      "spentAt": "2026-08-30T10:22:26.127Z",
+      "notes": "Warehouse power"
+    }
+  ],
+  "returns": [
+    {
+      "id": "ret_1",
+      "salesOrderId": "so_2003",
+      "productId": "prd_chips",
+      "quantity": 4,
+      "reason": "Damaged on delivery",
+      "status": "CREDITED",
+      "createdAt": "2026-09-13T10:22:26.127Z"
+    }
+  ],
+  "stockMovements": [
+    {
+      "id": "mov_62d84162-9f1b-46fc-9d30-f630ab93756e",
+      "productId": "prd_chips",
+      "type": "CYCLE_COUNT",
+      "quantity": 1,
+      "createdAt": "2026-09-15T10:22:26.144Z"
+    },
+    {
+      "id": "mov_1",
+      "productId": "prd_coke_500",
+      "type": "PURCHASE_RECEIPT",
+      "quantity": 320,
+      "createdAt": "2026-08-28T10:22:26.127Z"
+    },
+    {
+      "id": "mov_2",
+      "productId": "prd_pepsi_500",
+      "type": "SALE",
+      "quantity": -138,
+      "createdAt": "2026-09-10T10:22:26.127Z"
+    },
+    {
+      "id": "mov_3",
+      "productId": "prd_chips",
+      "type": "SALE",
+      "quantity": -60,
+      "createdAt": "2026-09-10T10:22:26.127Z"
+    },
+    {
+      "id": "mov_4",
+      "productId": "prd_chips",
+      "type": "RETURN",
+      "quantity": 4,
+      "createdAt": "2026-09-13T10:22:26.127Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "not_1",
+      "severity": "HIGH",
+      "title": "Milk below minimum stock",
+      "read": false,
+      "createdAt": "2026-09-14T10:22:26.127Z"
+    },
+    {
+      "id": "not_2",
+      "severity": "MEDIUM",
+      "title": "Pepsi PO partially received",
+      "read": false,
+      "createdAt": "2026-09-13T10:22:26.127Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "aud_e8af9dfa-5f56-44c4-96cb-0d83b6573763",
+      "actorId": "usr_inventory",
+      "action": "INVENTORY_ADJUSTED",
+      "entity": "PRODUCT",
+      "entityId": "prd_chips",
+      "createdAt": "2026-09-15T10:22:26.144Z",
+      "metadata": {
+        "quantity": 1
+      }
+    },
+    {
+      "id": "aud_1",
+      "actorId": "usr_owner",
+      "action": "SEED_DATA_CREATED",
+      "entity": "SYSTEM",
+      "entityId": "seed",
+      "createdAt": "2026-09-15T10:22:26.127Z",
+      "metadata": {}
+    }
+  ]
+}

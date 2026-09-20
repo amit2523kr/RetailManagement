@@ -1,0 +1,23 @@
+{
+  "name": "retail-distribution-platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloud-ready Retail & Distribution Management Platform showcase.",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm --workspace server run dev\" \"npm --workspace client run dev\"",
+    "start": "npm --workspace server start",
+    "build": "npm --workspace client run build",
+    "test": "npm --workspace server test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
