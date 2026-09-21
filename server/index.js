@@ -56,7 +56,7 @@ const root = join(__dirname, "..");
 const clientDist = join(root, "client", "dist");
 const app = express();
 const port = Number(process.env.PORT || 8123);
-const host = process.env.HOST || "127.0.0.1";
+const host = process.env.HOST || "0.0.0.0";
 
 // Request correlation ID
 app.use((req, res, next) => {

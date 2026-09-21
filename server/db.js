@@ -29,16 +29,10 @@ export async function connectDatabase() {
     });
     console.log(`✅ Connected to MongoDB successfully.`);
   } catch (error) {
-    if (process.env.MONGO_URI && process.env.MONGO_URI !== defaultUri) {
-      console.warn(`⚠️ Warning: Primary MongoDB connection failed (${error.message}).`);
-      console.warn(`🔄 Falling back to local MongoDB (${defaultUri})...`);
-      await mongoose.connect(defaultUri, {
-        serverSelectionTimeoutMS: 5000
-      });
-      console.log(`✅ Connected to local MongoDB fallback successfully.`);
-    } else {
-      throw error;
-    }
+    console.error(`\n❌ [Database Error] Could not connect to MongoDB at: ${uri}`);
+    console.error(`👉 If deploying to Render/cloud, please set the 'MONGO_URI' environment variable in your dashboard (e.g. from MongoDB Atlas Free M0).`);
+    console.error(`Details: ${error.message}\n`);
+    throw error;
   }
   await seedIfEmpty();
   await syncRoles();
